@@ -1,1 +1,32 @@
-rifat
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mid_Lab_Task_2</title>
+</head>
+<body>
+  <table border="1" width="450px">
+    <tr>
+      <th colspan="3" align="center"><h3>First HTML Site</h3></th>
+    </tr>
+    <tr height="300px">
+      <td>Links<br>
+        <a href="Page-1.html" >  Page-1</a><br>
+        <a href="Page-2.html" >  Page-2</a>
+      </td>
+      <td>
+        <h3>Page-2</h3><br>
+        I am at page-2
+      </td>
+      <td>
+        <h6>External Links</h6><br>
+        <a href="https://www.google.com/">google</a><br>
+        <a href="https://www.yahoo.com/">Yahoo</a><br>
+        
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">Copyright</td>
+    </tr>
+  </table>
+</body>
+</html>
