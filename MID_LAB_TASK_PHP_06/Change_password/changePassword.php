@@ -1,58 +1,68 @@
-<!DOCTYPE html>
+  
+
 <html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-</head>
+
 <body>
-  <form method="post" action="loginCheck.php"> 
-		<fieldset>
-			<legend>Login</legend>
-			
-				<table>
-					<tr>
-							<td><span>User Name</span> </td>
-							<td>:<input type="text" name="username"></td>
-				  </tr>
-					<tr>
-							<td><span>Password</span> </td>
-							<td>:<input type="password" name="password"></td>
-				  </tr>
-				</table>	
-					<hr>
-				  <input type="checkbox" name="rememberMe" id=""><span>Remember Me</span><br><br>
-				
-						<input type="submit" name="submit" value="Submit">
-						<a href="#"> Forgate password?</a>
-				
-		</fieldset>
-	</form>
-	
-	<?php
-	
-	if(isset($_POST['Submit']))
-	{
-		$currentPassword = $_POST['cPass'];
-		$newPassword = $_POST['newPass'];
-		$retypeNewPassword = $_POST['retypePass'];
-    if($currentPassword=="" and $newPassword="" and $retypeNewPassword){
-      echo"Fields can not be empty";
-    }
-    else{
-		if($currentPassword !== $newPassword && $newPassword == $retypeNewPassword)
-		{
-			echo "Successfully Changed";
-		}
-        else
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+<fieldset>
+
+    <legend style="font-family: Arial, Helvetica, sans-serif;"><b>CHANGE PASSWORD</b></legend>
+
+    <div class="pp">
+
+    <label>Current Password : </label>
+    <input type="password" id="currpword" name="currpword" ><br><br>
+
+    <label style="color: green;">New Password : </label>
+    <input type="password" id="npword" name="npword" ><br><br>
+
+    <label style="color: red;">Retype New Password : </label>
+    <input type="password" id="Rnpword" name="Rnpword" ><br>
+
+    </div>
+
+    <style>
+        .pp label
         {
-            echo "Something mismatch here! Please Try Again";
+            width: 170px;
+            display: inline-block;
+            text-align: left;
+            margin: 3px;
         }
-	  }
-}
+    </style>
+
+
+    <hr><br>
+
+    <input type="submit" name="submit" id="submit" value="Submit">
+
+</fieldset>
+</form>
+
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    {
+      if(isset($_POST['submit']))
+        {
+            $currpword = $_POST['currpword'];
+            $npword = $_POST['npword'];
+            $Rnpword  = $_POST['Rnpword'];
+            if($currpword == $npword)
+            {
+                echo "Please use a New Password!";
+            }
+            if($Rnpword != $npword)
+            {
+                echo "Your New Password doesn't match!";
+            }
+            else
+            {
+                echo "Your Password has been changed!";
+            }
+        }
+    }   
 ?>
+
 </body>
+
 </html>
