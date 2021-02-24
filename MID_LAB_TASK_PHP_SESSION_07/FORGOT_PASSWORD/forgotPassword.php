@@ -37,7 +37,7 @@
 </tr>
 <tr>
 <td>
-<p>Copyright &#169; 2027</p>
+<p align="center">Copyright &#169; 2027</p>
 </td>
 </tr>
 </body>
