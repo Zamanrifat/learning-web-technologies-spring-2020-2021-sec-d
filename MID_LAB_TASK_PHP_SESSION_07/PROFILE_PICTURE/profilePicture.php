@@ -3,7 +3,7 @@
 
 <head>
     
-    <title>Publix Home</title>
+    <title>Profile Picture</title>
 </head>
 
 <body>

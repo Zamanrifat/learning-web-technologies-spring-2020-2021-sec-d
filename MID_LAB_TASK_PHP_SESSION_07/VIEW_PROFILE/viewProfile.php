@@ -3,7 +3,7 @@
 
 <head>
     
-    <title>Publix Home</title>
+    <title>View Profile</title>
 </head>
 
 <body>
@@ -85,9 +85,12 @@
 	<?php
 
     session_start();
-    $user = $_SESSION['current_user'] ;
-    $user_name = $user ['user_name'];
+$user = $_SESSION['current_user'] ;
 
+$user_name = $user ['user_name'];
+$gender = $user ['gender'];
+$date_birth = $user ['date_barth'];
+$email =  $user ['email'];
 
 ?>
 </body>
