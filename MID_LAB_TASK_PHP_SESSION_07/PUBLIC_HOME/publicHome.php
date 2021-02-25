@@ -16,7 +16,7 @@
 <td>
 <br>
 <br>
-&nbsp;&nbsp;&nbsp; Welcome to xCompany
+&nbsp;&nbsp;&nbsp; <h3>Welcome to xCompany</h3>
 <br>
 <br>
 <br>

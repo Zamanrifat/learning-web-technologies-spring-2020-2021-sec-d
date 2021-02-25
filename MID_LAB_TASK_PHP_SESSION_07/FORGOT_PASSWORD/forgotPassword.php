@@ -19,7 +19,7 @@
 <?php include('Header.php');?>
     <form id="forgetpass" method="get" action="ForgotPassword.php">
             <fieldset style="border: black 2px solid;">
-                <legend><b>FORGET PASSWORD</b></legend>
+                <legend><b>FORGOT PASSWORD</b></legend>
 
                 <div class="forgetpass">
                     <label for="email"><b>Email</b></label>
