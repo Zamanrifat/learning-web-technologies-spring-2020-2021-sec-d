@@ -1,52 +1,48 @@
-<?php
-	
-	$title = "Edit Page";
-	include('header.php');
+<?php 
+include_once('connection.php');  
 
-	echo $_GET['id'];
+if(isset($_POST['update']))
+{
 
+	$query = "UPDATE users SET user_name = '$_POST[user_name]',password = '$_POST[password]',repass = '$_POST[repass]',email = '$_POST[email]' WHERE user_name = '$_POST[user_name]'";
+	$result=mysqli_query($con,$query); 
+
+if($result)
+{
+	echo "Successfully record edited";
+}
+else
+{
+	echo "Failed the edition";
+}
+}
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EDIT</title>
+</head>
+<body>
 
-	<div id="page_title">
-		<h1>Edit User Page</h1>		
-	</div>
-
-	<div id="nav_bar">
+	
+	
 		
-		<a href="user_list.php">Back</a> |		
-		<a href="../controller/logout.php">Logout</a>		
-	</div>
-
-	<div id="main_content">
-		<form method="post" action="">
+		<form method="post">
 			<fieldset>
-				<legend>Edit User</legend>
-				<table>
-					<tr>
-						<td>Username</td>
-						<td><input type="text" name="username" value=""></td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td><input type="text" name="name" value=""></td>
-					</tr>
-					<tr>
-						<td>Email</td>
-						<td><input type="email" name="email" value=""></td>
-					</tr>
-					<tr>
-						<td>Password</td>
-						<td><input type="password" name="password" value""></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<input type="submit" name="submit" value="Update">
-						</td>
-					</tr>
-				</table>
-			</fieldset>
-		</form>
-	</div>
+			<legend>Edit</legend>
 
-<?php include('footer.php') ?>
+			User name: <input id="text" type="text" name="user_name"><br><br>
+			Password: <input id="text" type="password" name="password"><br><br>
+			Re-password: <input id="text" type="password" name="repass"><br><br>
+			E-mail: <input id="text" type="email" name="email"><br><br>
+
+			<input id="button" type="submit" name="update" value="Update"><br><br>
+
+			<a href="userlist.php">Back</a><br><br>
+		</fieldset>
+		</form>
+		<br>
+<center>Copyright@2021</center>
+
+</body>
+</html>

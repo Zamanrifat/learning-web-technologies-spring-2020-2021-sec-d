@@ -20,18 +20,9 @@ session_start();
 			//$user_id = random_num(20);
 			$query = "insert into users (user_name,password,repass,email) values ('$user_name','$password','$repass','$email')";
 
-			$result=mysqli_query($con, $query);
-			if($result)
-{
-	echo "New User Created";
-}
-else
-{
-	echo "Action Failed";
-}
+			mysqli_query($con, $query);
 
-
-			header("Location: create.php");
+			header("Location: login.php");
 			die;
 		}else
 		{
@@ -44,7 +35,7 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-	<title>New User</title>
+	<title>Registration</title>
 </head>
 <body>
 
@@ -53,16 +44,16 @@ else
 		
 		<form method="post">
 			<fieldset>
-			<legend>New User</legend>
+			<legend>Registration</legend>
 
 			User name: <input id="text" type="text" name="user_name"><br><br>
 			Password: <input id="text" type="password" name="password"><br><br>
 			Re-password: <input id="text" type="password" name="repass"><br><br>
 			E-mail: <input id="text" type="email" name="email"><br><br>
 
-			<input id="button" type="submit" value="Create"><br><br>
+			<input id="button" type="submit" value="Register"><br><br>
 
-			<a href="index.php">Back</a><br><br>
+			<a href="login.php">Login</a><br><br>
 		</fieldset>
 		</form>
 		<br>
