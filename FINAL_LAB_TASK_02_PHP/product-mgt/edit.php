@@ -4,7 +4,7 @@ include_once('connection.php');
 if(isset($_POST['update']))
 {
 
-	$query = "UPDATE users SET user_name = '$_POST[user_name]',password = '$_POST[password]',repass = '$_POST[repass]',email = '$_POST[email]' WHERE user_name = '$_POST[user_name]'";
+	$query = "UPDATE products SET product_name = '$_POST[product_name]',buying_price = '$_POST[buying_price]',selling_price = '$_POST[selling_price]',profit = '$_POST[profit]' WHERE product_name = '$_POST[product_name]'";
 	$result=mysqli_query($con,$query); 
 
 if($result)
@@ -31,14 +31,14 @@ else
 			<fieldset>
 			<legend>Edit</legend>
 
-			User name: <input id="text" type="text" name="user_name"><br><br>
-			Password: <input id="text" type="password" name="password"><br><br>
-			Re-password: <input id="text" type="password" name="repass"><br><br>
-			E-mail: <input id="text" type="email" name="email"><br><br>
+			Name: <input id="text" type="text" name="product_name"><br><br>
+			Buying Price: <input id="text" type="number" name="buying_price"><br><br>
+			Selling Price: <input id="text" type="number" name="selling_price"><br><br>
+			Profit: <input id="text" type="number" name="profit"><br><br>
 
 			<input id="button" type="submit" name="update" value="Update"><br><br>
 
-			<a href="userlist.php">Back</a><br><br>
+			<a href="productlist.php">Back</a><br><br>
 		</fieldset>
 		</form>
 		<br>
