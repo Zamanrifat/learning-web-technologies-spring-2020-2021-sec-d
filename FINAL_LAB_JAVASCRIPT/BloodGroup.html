@@ -1,0 +1,44 @@
+<html>
+   <head>
+    <title>Page_6</title>
+   </head>
+   <body>
+    <form methods="" action"">
+    <table>
+    <tr>
+    <td>Blood Group
+    <select name="blood group">
+    <option value="A+">A+</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-" selected>B+</option>
+    </select>
+    </td>
+    </tr>
+    <br>
+    <tr>
+    <td>
+    <hr>
+    <button type="button" onclick="bloodgroupcheck()">
+		Submit
+	</button>
+    </td>			
+    </tr>
+    </form>
+    </table>
+    <script>
+		function bloodgroupcheck() 
+		{
+			
+			var a = document.getElementById("blood group").value;
+			document.write("Your DOB is,"+a);
+		}
+	</script>
+    </body>
+</html>
+
+
